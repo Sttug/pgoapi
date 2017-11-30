@@ -16,8 +16,7 @@ class HashServer(HashEngine):
     _session.mount('https://', _adapter)
     _session.verify = True
     _session.headers.update({'User-Agent': 'Python pgoapi @pogodev'})
-    #endpoint = 'https://pokehash.buddyauth.com/api/v147_1/hash'
-    endpoint = 'http://hash.goman.io/api/v147_1/hash'
+    endpoint = 'https://pokehash.buddyauth.com/api/v153_2/hash'
     status = {}
 
     def __init__(self, auth_token):
@@ -26,9 +25,7 @@ class HashServer(HashEngine):
         self.headers = {
             'content-type': 'application/json',
             'Accept': 'application/json',
-            'X-AuthToken': auth_token,
-            'X-MaxRPMCount' : '30000',
-            'X-RateLimit' : '2000'
+            'X-AuthToken': auth_token
         }
 
     def hash(self, timestamp, latitude, longitude, accuracy, authticket,
